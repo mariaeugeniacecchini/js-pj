@@ -1,0 +1,402 @@
+/* Reset de márgenes y rellenos */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables de color */
+:root {
+  --color-fondo: #f5f5f7;
+  --color-texto: #1d1d1f;
+  --color-enlace: #0071e3;
+  --color-enlace-hover: #005bb5;
+  --color-boton: #0071e3;
+  --color-boton-hover: #005bb5;
+  --color-boton-texto: #fff;
+  --color-gris-claro: #e0e0e0;
+  --color-gris: #8e8e93;
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f5f7;
+  color: #1d1d1f; /* Color de texto con buen contraste */
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid var(--color-gris-claro);
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+header nav a {
+  color: var(--color-texto);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: var(--color-enlace);
+}
+
+/* Hero Section */
+.hero {
+  background-image: url('img/iphone.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #040404;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.carousel-container {
+  position: relative;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+  height: 220px;
+}
+
+.testimonial {
+  position: absolute;
+  opacity: 0;
+  transform: translateX(50%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  text-align: center;
+  width: 100%;
+}
+
+.testimonial.active {
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+}
+
+.quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.author {
+  display: block;
+  color: #777;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+#productos h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.hero img {
+  width: 60%;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+/* Productos */
+.productos {
+  display: flex;
+  justify-content: space-around;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 3rem 20px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  text-align: center;
+  padding: 2rem;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 1rem;
+  color: var(--color-gris);
+}
+
+/* Reseñas */
+.grid-resenas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 3rem 20px;
+}
+
+.resena {
+  background-color: #fff;
+  border-left: 5px solid var(--color-enlace);
+  padding: 1.5rem;
+  font-style: italic;
+  color: var(--color-gris);
+  position: relative;
+}
+
+.resena::before {
+  content: '“';
+  font-size: 3rem;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  color: var(--color-enlace);
+}
+
+/* Contacto */
+form {
+  max-width: 600px;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+input,
+textarea {
+  padding: 1rem;
+  border: 1px solid var(--color-gris-claro);
+  border-radius: 5px;
+  font-size: 1rem;
+  color: var(--color-texto);
+  background-color: #fff;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+button {
+  padding: 1rem;
+  background-color: var(--color-boton);
+  color: var(--color-boton-texto);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--color-boton-hover);
+}
+
+/* Video */
+.video-section {
+  text-align: center;
+  padding: 3rem 20px;
+}
+
+video {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #fff;
+  border-top: 1px solid var(--color-gris-claro);
+  text-align: center;
+  padding: 2rem 20px;
+  font-size: 0.875rem;
+  color: var(--color-gris);
+}
+
+/* Visually hidden for accessibility */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* Contacto - estilo limpio */
+#contacto {
+  background-color: #fff;
+  padding: 4rem 2rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#contacto h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#contacto p {
+  color: #6e6e73;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #0071e3;
+  outline: none;
+  background-color: #fff;
+}
+
+button[type="submit"] {
+  background-color: #0071e3;
+  color: white;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #005bb5;
+}
+
+/* RESEÑAS */
+#resenas {
+  background-color: #ffffff;
+  padding: 4rem 1rem;
+  color: #1d1d1f;
+  border-top: 1px solid #e5e5e5;
+}
+
+.resenas-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#resenas h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.grid-resenas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.resena {
+  background-color: #f5f5f7;
+  padding: 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  line-height: 1.6;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.resena p {
+  color: #1d1d1f;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.resena span {
+  display: block;
+  color: #6e6e73;
+  font-size: 0.9rem;
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .productos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    margin-bottom: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.125rem;
+  }
+
+  
+}

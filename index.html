@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apple Store - Clon</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">iPhone</a></li>
+        <li><a href="#resenas">Opiniones</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <h1>iPhone 15 Pro</h1>
+      <p>Más Pro que nunca.</p>
+      <img src="assets/15.png" alt="iPhone" />
+    </section>
+
+    <section id="productos">
+      <h2 >Descubre el iPhone</h2>
+      <div class="productos">
+        <div class="card">
+          <h3>iPhone 15</h3>
+          <p>Potente. Inteligente. Hermoso.</p>
+        </div>
+        <div class="card">
+          <h3>iPhone 15 Pro</h3>
+          <p>Forjado en titanio.</p>
+        </div>
+        <div class="card">
+          <h3>iPhone SE</h3>
+          <p>El poder de Apple a un gran precio.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="resenas">
+  <div class="resenas-wrapper">
+    <h2>Lo que dicen nuestros usuarios</h2>
+    <div class="carousel-container">
+      <div class="testimonial active">
+        <p class="quote">“El mejor iPhone que he tenido. El diseño y rendimiento son excepcionales.”</p>
+        <span class="author">– Carlos M.</span>
+      </div>
+      <div class="testimonial">
+        <p class="quote">“Impresionante cámara. Todo funciona rápido y fluido.”</p>
+        <span class="author">– Laura G.</span>
+      </div>
+      <div class="testimonial">
+        <p class="quote">“Vale cada centavo. Apple nunca decepciona.”</p>
+        <span class="author">– Andrés R.</span>
+      </div>
+      <div class="testimonial">
+        <p class="quote">“Batería de larga duración y pantalla brillante. ¡Lo amo!”</p>
+        <span class="author">– María T.</span>
+      </div>
+      <div class="testimonial">
+        <p class="quote">“Actualización muy fluida desde mi modelo anterior.”</p>
+        <span class="author">– Jorge L.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section id="contacto">
+  <div class="contact-container">
+    <h2>Contáctanos</h2>
+    <p>¿Tienes alguna pregunta? Estamos aquí para ayudarte.</p>
+    <form action="https://formspree.io/f/tu-id" method="POST">
+      <div class="form-group">
+        <label for="nombre" class="visually-hidden">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="email" class="visually-hidden">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+      </div>
+      <div class="form-group">
+        <label for="mensaje" class="visually-hidden">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí" required></textarea>
+      </div>
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </div>
+</section>
+
+    <section class="video-section">
+      <h2>Mira el nuevo iPhone</h2>
+      <video controls>
+        <source src="assets/iphone15.mp4" type="video/mp4" />
+        Tu navegador no soporta el video.
+      </video>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Apple Store Clon</p>
+  </footer>
+<script>
+  const testimonials = document.querySelectorAll('.testimonial');
+  let currentIndex = 0;
+
+  function showNextTestimonial() {
+    testimonials[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    testimonials[currentIndex].classList.add('active');
+  }
+
+  setInterval(showNextTestimonial, 5000); // Cambia cada 5 segundos
+</script>
+
+</body>
+</html>
