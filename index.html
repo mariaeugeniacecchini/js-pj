@@ -16,6 +16,9 @@
         <li><a href="#productos">iPhone</a></li>
         <li><a href="#resenas">Opiniones</a></li>
         <li><a href="#contacto">Contacto</a></li>
+        <li>
+          <a href="#carrito">Carrito <span id="cart-count">0</span></a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -28,51 +31,51 @@
     </section>
 
     <section id="productos">
-      <h2 >Descubre el iPhone</h2>
-      <div class="productos">
-        <div class="card">
-          <h3>iPhone 15</h3>
-          <p>Potente. Inteligente. Hermoso.</p>
-        </div>
-        <div class="card">
-          <h3>iPhone 15 Pro</h3>
-          <p>Forjado en titanio.</p>
-        </div>
-        <div class="card">
-          <h3>iPhone SE</h3>
-          <p>El poder de Apple a un gran precio.</p>
-        </div>
+  <h2>Descubre el iPhone</h2>
+  <div id="product-list" class="productos">
+    <!-- Productos cargados dinámicamente aquí -->
+  </div>
+</section>
+
+
+
+    <section id="carrito">
+      <h2>Tu Carrito</h2>
+      <div id="cart-list">
+        <!-- Productos agregados al carrito se mostrarán aquí -->
+      </div>
+      <div id="cart-total">
+        $0.00
       </div>
     </section>
 
     <section id="resenas">
-  <div class="resenas-wrapper">
-    <h2>Lo que dicen nuestros usuarios</h2>
-    <div class="carousel-container">
-      <div class="testimonial active">
-        <p class="quote">“El mejor iPhone que he tenido. El diseño y rendimiento son excepcionales.”</p>
-        <span class="author">– Carlos M.</span>
+      <div class="resenas-wrapper">
+        <h2>Lo que dicen nuestros usuarios</h2>
+        <div class="carousel-container">
+          <div class="testimonial active">
+            <p class="quote">“El mejor iPhone que he tenido. El diseño y rendimiento son excepcionales.”</p>
+            <span class="author">– Carlos M.</span>
+          </div>
+          <div class="testimonial">
+            <p class="quote">“Impresionante cámara. Todo funciona rápido y fluido.”</p>
+            <span class="author">– Laura G.</span>
+          </div>
+          <div class="testimonial">
+            <p class="quote">“Vale cada centavo. Apple nunca decepciona.”</p>
+            <span class="author">– Andrés R.</span>
+          </div>
+          <div class="testimonial">
+            <p class="quote">“Batería de larga duración y pantalla brillante. ¡Lo amo!”</p>
+            <span class="author">– María T.</span>
+          </div>
+          <div class="testimonial">
+            <p class="quote">“Actualización muy fluida desde mi modelo anterior.”</p>
+            <span class="author">– Jorge L.</span>
+          </div>
+        </div>
       </div>
-      <div class="testimonial">
-        <p class="quote">“Impresionante cámara. Todo funciona rápido y fluido.”</p>
-        <span class="author">– Laura G.</span>
-      </div>
-      <div class="testimonial">
-        <p class="quote">“Vale cada centavo. Apple nunca decepciona.”</p>
-        <span class="author">– Andrés R.</span>
-      </div>
-      <div class="testimonial">
-        <p class="quote">“Batería de larga duración y pantalla brillante. ¡Lo amo!”</p>
-        <span class="author">– María T.</span>
-      </div>
-      <div class="testimonial">
-        <p class="quote">“Actualización muy fluida desde mi modelo anterior.”</p>
-        <span class="author">– Jorge L.</span>
-      </div>
-    </div>
-  </div>
-</section>
-
+    </section>
 
     <section id="contacto">
   <div class="contact-container">
@@ -96,30 +99,4 @@
   </div>
 </section>
 
-    <section class="video-section">
-      <h2>Mira el nuevo iPhone</h2>
-      <video controls>
-        <source src="assets/iphone15.mp4" type="video/mp4" />
-        Tu navegador no soporta el video.
-      </video>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Apple Store Clon</p>
-  </footer>
-<script>
-  const testimonials = document.querySelectorAll('.testimonial');
-  let currentIndex = 0;
-
-  function showNextTestimonial() {
-    testimonials[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + 1) % testimonials.length;
-    testimonials[currentIndex].classList.add('active');
-  }
-
-  setInterval(showNextTestimonial, 5000); // Cambia cada 5 segundos
-</script>
-
-</body>
-</html>
+<script src="script.js"></script>

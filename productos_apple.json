@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "title": "iPhone 15 Pro",
+    "price": 850,
+    "image": "assets/iphone15pro.png"
+  },
+  {
+    "id": 2,
+    "title": "iPhone 15",
+    "price": 750,
+    "image": "assets/15.png"
+  }
+  
+]
